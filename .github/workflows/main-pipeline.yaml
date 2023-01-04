@@ -1,0 +1,30 @@
+name: Main branch workflow prod
+on:
+  push:
+    branches:
+      - main
+
+env:
+  SOLUTION_PATH: "src/"
+  OUTPUT_DIRECTORY: ${{ github.workspace }}/output
+
+jobs:
+  Build-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.SOLUTION_PATH }}
+
+      - name: Build
+        run: dotnet build ${{ env.SOLUTION_PATH }} --no-restore --configuration Release
+
+      - name: Test
+        run: dotnet test ${{ env.SOLUTION_PATH }} --configuration Release --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
