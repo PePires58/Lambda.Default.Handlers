@@ -4,7 +4,27 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Title>Lambda.Default.Handlers.EventBridge</Title>
+    <Description>Default handler for lambda functions which uses Event Bridge as request entry</Description>
+    <RepositoryUrl>https://github.com/PePires58/Lambda.Default.Handlers</RepositoryUrl>
+    <PackageTags>aws;lambda;event;bridge;</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <Company>Escola de Software</Company>
+    <Authors>Pedro Henrique Pires</Authors>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\images\icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.CloudWatchEvents" Version="4.0.0" />
