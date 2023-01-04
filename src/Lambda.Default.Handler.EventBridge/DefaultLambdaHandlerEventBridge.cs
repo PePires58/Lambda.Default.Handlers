@@ -37,7 +37,13 @@ namespace Lambda.Default.Handler.EventBridge
         }
         #endregion
 
-
+        /// <summary>
+        /// Default lambda handler for event bridge
+        /// </summary>
+        /// <param name="request">Request object</param>
+        /// <param name="context">Context</param>
+        /// <returns>Task</returns>
+        /// <exception cref="ArgumentNullException">Throw argument null exception when the request or the detail is null</exception>
         public async Task DefaultLambdaHandlerForEventBridge(CloudWatchEvent<T> request, ILambdaContext context)
         {
             Logger.LogInformation("Starting method");
