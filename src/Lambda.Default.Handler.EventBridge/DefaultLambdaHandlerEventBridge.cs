@@ -13,27 +13,24 @@ namespace Lambda.Default.Handler.EventBridge
         where T : class, new()
     {
         /// <summary>
+        /// Notification service
+        /// </summary>
+        public abstract INotificatorService NotificatorService { get; set; }
+
+        /// <summary>
         /// Logger
         /// </summary>
         ILogger<DefaultLambdaHandlerEventBridge<T>> Logger { get; set; }
         
-        /// <summary>
-        /// Notification service
-        /// </summary>
-        INotificatorService NotificatorService { get; set; }
-
         #region Constructor
         
         /// <summary>
         /// Default lambda handler for event bridge
         /// </summary>
         /// <param name="logger">Logger object</param>
-        /// <param name="notificatorService">Notification Service</param>
-        protected DefaultLambdaHandlerEventBridge(ILogger<DefaultLambdaHandlerEventBridge<T>> logger,
-            INotificatorService notificatorService)
+        protected DefaultLambdaHandlerEventBridge(ILogger<DefaultLambdaHandlerEventBridge<T>> logger)
         {
             Logger = logger;
-            NotificatorService = notificatorService;
         }
         #endregion
 
