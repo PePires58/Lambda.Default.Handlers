@@ -31,8 +31,7 @@
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.CloudWatchEvents" Version="4.0.0" />
     <PackageReference Include="Amazon.Lambda.Core" Version="2.1.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
-    <PackageReference Include="Notification.Nuget" Version="2.1.0" />
+    <PackageReference Include="Notification.Nuget" Version="2.1.1" />
   </ItemGroup>
 
 </Project>
